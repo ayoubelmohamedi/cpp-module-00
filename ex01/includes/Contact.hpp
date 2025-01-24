@@ -6,20 +6,18 @@
 #include <cstdlib>
 #include <iostream>
 
+typedef std::string string; 
+
 class Contact
 {
 private:
-    std::string _name;
-    std::string _last_name;
-    std::string _nickname;
-    std::string _phone_num;
-    std::string _dark_secret;
-
+    std::string _info[5];
+   
 public:
     Contact();
     ~Contact();
 
-    get_info(void);
+    void get_info(void);
 }
 
 #endif
