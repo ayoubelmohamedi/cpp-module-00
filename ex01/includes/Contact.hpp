@@ -11,7 +11,8 @@ typedef std::string string;
 class Contact
 {
 private:
-    std::string _info[5];
+    //first name, last name, nickname, phone number, and darkest secret
+    string _info[5];
    
 public:
     Contact();
