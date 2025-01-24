@@ -1,6 +1,5 @@
 
-#include <phonebook.hpp>
-
+#include <Phonebook.hpp>
 
 int main(int ac, char* av[])
 {
@@ -12,7 +11,11 @@ int main(int ac, char* av[])
         word = std::getline(std::cin, word);
         std::cout << word;
         if (!strcmp(word, "ADD"))
-            phonebook.add_user();
+        {
+            Contact info = Contact::getdata();
+            if (info)
+                phonebook.add_user(info);
+        }
         else if (!strcmp(word, "SEARCH"))
             phonebook.search();
         else if (!strcmp(word, "EXIT"))
