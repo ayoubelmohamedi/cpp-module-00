@@ -19,12 +19,15 @@ PhoneBook::add_user(Contact info)
 
 PhoneBook::search()
 {
+	string input;
     if (this->_index > 0)
 	{
 		std::cout << "|-------------------------------------------|" << std::endl;
 		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
-		this->_contacts[index - 1].get_info();
+		for (int i = 0; i < 8; i++)
+			this->_contacts[index - 1].get_info();
 		std::cout << "|-------------------------------------------|" << std::endl;
 	}
+
 }
