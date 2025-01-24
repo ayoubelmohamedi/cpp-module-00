@@ -9,11 +9,11 @@
 class Contact
 {
 private:
-    string name;
-    string last_name;
-    string nickname;
-    string phone_num;
-    string dark_secret;
+    string _name;
+    string _last_name;
+    string _nickname;
+    string _phone_num;
+    string _dark_secret;
 
 public:
     Contact();
