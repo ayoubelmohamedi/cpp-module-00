@@ -20,6 +20,6 @@ public:
 
     void add_user(Contact info);
     void search();
-}
+};
 
 #endif
