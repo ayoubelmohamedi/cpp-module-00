@@ -12,7 +12,8 @@ int main(int ac, char* av[])
         std::cout << word;
         if (!strcmp(word, "ADD"))
         {
-            Contact info = Contact::getdata();
+            
+            Contact info = new Contact();
             if (info)
                 phonebook.add_user(info);
         }
