@@ -1,33 +1,43 @@
 
 #include <Phonebook.hpp>
 
-PhoneBook::PhoneBook(void)
+Phonebook::Phonebook(void)
 {
 	this->_index = 0;
 	return;
 }
 
-PhoneBook::~PhoneBook(void)
+Phonebook::~Phonebook(void)
 {
 	return;
 }
 
-PhoneBook::add_user(Contact info)
+void Phonebook::add_user(Contact info)
 {
-    this->contacts[this->_index++ % 8] = info;
+    this->_contacts[this->_index++ % 8] = info;
 } 
 
-PhoneBook::search()
+void Phonebook::search()
 {
 	string input;
-    if (this->_index > 0)
+
+    if (!this->_contacts[0].get_fname().empty())
 	{
 		std::cout << "|-------------------------------------------|" << std::endl;
 		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
 		std::cout << "|----------|----------|----------|----------|" << std::endl;
-		for (int i = 0; i < 8; i++)
-			this->_contacts[index - 1].get_info();
+		for (int j = 0; j < 8; j++)
+			this->_contacts[j].get_info();
 		std::cout << "|-------------------------------------------|" << std::endl;
 	}
+	if (std::getline(std::cin, input) && input != "" && (input.length() == 1 && input[0] >= '0' && input[0] <= '8'))
+    {
 
+		if (!this->_contacts[input[0] - '0'].get_fname().empty())	
+			this->_contacts[input[0] - '0'].get_all_info();
+		else
+        	std::cout << " no output found " << std::endl;
+    }
+    else
+            std::cout << " no output found " << std::endl;
 }
