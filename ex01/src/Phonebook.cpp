@@ -14,6 +14,8 @@ Phonebook::~Phonebook(void)
 
 void Phonebook::add_user(Contact info)
 {
+	if (this->_index == 8)
+		this->_index = 0;
     this->_contacts[this->_index++ % 8] = info;
 } 
 
