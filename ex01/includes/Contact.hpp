@@ -15,10 +15,14 @@ private:
     string _info[5];
    
 public:
-    Contact();
+    Contact(string name, string last_name, string nickname, string phone, string secret);
     ~Contact();
 
     void get_info(void);
-}
+    void get_all_info(void);
+    string get_fname(void);
+    string get_lname(void);
+    string get_nickname(void);
+};
 
 #endif
