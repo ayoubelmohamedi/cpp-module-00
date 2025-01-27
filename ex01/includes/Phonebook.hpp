@@ -18,8 +18,8 @@ public:
     Phonebook();
     ~Phonebook();
 
-    void add_user(Contact info);
-    void search();
+    void add_user(void);
+    void search(void);
 };
 
 #endif
