@@ -12,11 +12,43 @@ Phonebook::~Phonebook(void)
 	return;
 }
 
-void Phonebook::add_user(Contact info)
+void Phonebook::add_user(void)
 {
+	std::string input;
+	bool valid;
+
+	valid = false;	
 	if (this->_index == 8)
 		this->_index = 0;
-    this->_contacts[this->_index++ % 8] = info;
+ 	const std::string prompts[] = {
+            "Enter a first name: ",
+            "Enter " + _contacts[_index % 8].get_fname() + "'s last name: ",
+            "Enter " + _contacts[_index % 8].get_fname() + "'s nickname: ",
+            "Enter " + _contacts[_index % 8].get_fname() + "'s phone number: ",
+            "Enter " + _contacts[_index % 8].get_fname() + "'s darkest secret: "
+    };
+ 	for (int i = 0; i < 5; ++i) {
+            while (!std::cin.eof() && input.empty()) {
+                std::cout << prompts[i];
+                if (std::getline(std::cin, input) && !input.empty()) {
+					valid = true;
+                    switch (i) {
+                        case 0: _contacts[_index % 8].set_fname(input); break;
+                        case 1: _contacts[_index % 8].set_lname(input); break;
+                        case 2: _contacts[_index % 8].set_nickname(input); break;
+                        case 3: _contacts[_index % 8].set_phone(input); break;
+                        case 4: _contacts[_index % 8].set_secret(input); break;
+                    }
+                }
+            }
+            input = "";
+		}
+		if (valid)
+		{
+			std::cout << _contacts[_index % 8].get_fname() << " successfully added to phonebook ["
+                  << _index % 8 + 1 << "/8]" << std::endl;
+			this->_index++;
+		}
 } 
 
 void Phonebook::search()
