@@ -20,7 +20,6 @@ public:
 
     void get_info(void);
     void get_all_info(void);
-
     void set_fname(std::string str);
     void set_lname(std::string str);
     void set_nickname(std::string str);
