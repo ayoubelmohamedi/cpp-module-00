@@ -21,16 +21,16 @@ public:
     void get_info(void);
     void get_all_info(void);
 
-    string set_fname(std::string str);
-    string set_lname(std::string str);
-    string set_nickname(std::string str);
-    string set_phone(std::string str);
-    string set_secret(std::string str);
-    string get_fname(void) const;
-    string get_lname(void) const;
-    string get_nickname(void) const;
-    string get_phone(void) const;
-    string get_secret(void) const;
+    void set_fname(std::string str);
+    void set_lname(std::string str);
+    void set_nickname(std::string str);
+    void set_phone(std::string str);
+    void set_secret(std::string str);
+    std::string get_fname(void) const;
+    std::string get_lname(void) const;
+    std::string get_nickname(void) const;
+    std::string get_phone(void) const;
+    std::string get_secret(void) const;
 };
 
 #endif
