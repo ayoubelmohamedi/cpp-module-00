@@ -64,13 +64,12 @@ void Phonebook::search()
 			this->_contacts[j].get_info();
 		std::cout << "|-------------------------------------------|" << std::endl;
 	}
-	if (std::getline(std::cin, input) && input != "" && (input.length() == 1 && input[0] >= '0' && input[0] <= '8'))
+	if (std::getline(std::cin, input) && input != "" && (input.length() == 1 && (input[0] >= '0' && input[0] <= '8')))
     {
-
-		if (!this->_contacts[input[0] - '0'].get_fname().empty())	
+		if (input[0] - '0' < 8)
 			this->_contacts[input[0] - '0'].get_all_info();
 		else
-        	std::cout << " no output found " << std::endl;
+        	std::cout << "Invalid index!" << std::endl;
     }
     else
             std::cout << " no output found " << std::endl;
