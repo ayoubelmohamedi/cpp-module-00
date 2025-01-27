@@ -6,8 +6,6 @@
 #include <cstdlib>
 #include <iostream>
 
-typedef std::string string; 
-
 class Contact
 {
 private:
