@@ -12,17 +12,25 @@ class Contact
 {
 private:
     //first name, last name, nickname, phone number, and darkest secret
-    string _info[5];
+    std::string _info[5];
    
 public:
-    Contact(string name, string last_name, string nickname, string phone, string secret);
+    Contact();
     ~Contact();
 
     void get_info(void);
     void get_all_info(void);
-    string get_fname(void);
-    string get_lname(void);
-    string get_nickname(void);
+
+    string set_fname(std::string str);
+    string set_lname(std::string str);
+    string set_nickname(std::string str);
+    string set_phone(std::string str);
+    string set_secret(std::string str);
+    string get_fname(void) const;
+    string get_lname(void) const;
+    string get_nickname(void) const;
+    string get_phone(void) const;
+    string get_secret(void) const;
 };
 
 #endif
