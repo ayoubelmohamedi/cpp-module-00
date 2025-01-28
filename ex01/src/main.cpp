@@ -4,7 +4,7 @@
 int main(void)
 {
     std::string input;
-    PhoneBook phonebook;
+    Phonebook phonebook;
 
     while (input != "EXIT")
     {

@@ -1,5 +1,5 @@
 
-#include <Phonebook.hpp>
+#include "Phonebook.hpp"
 
 Phonebook::Phonebook(void)
 {
@@ -53,7 +53,7 @@ void Phonebook::add_user(void)
 
 void Phonebook::search()
 {
-	string input;
+	std::string input;
 
     if (!this->_contacts[0].get_fname().empty())
 	{
