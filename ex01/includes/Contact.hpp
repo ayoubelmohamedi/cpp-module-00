@@ -2,7 +2,7 @@
 #define CONTACT_HPP
 
 #include <string>
-#include <iomanip>
+#include <iomanip>  // for std::setw, std::left, std::right
 #include <cstdlib>
 #include <iostream>
 
@@ -16,7 +16,7 @@ public:
     Contact();
     ~Contact();
 
-    void get_info(void);
+    void get_info(int index);
     void get_all_info(void);
     void set_fname(std::string str);
     void set_lname(std::string str);
