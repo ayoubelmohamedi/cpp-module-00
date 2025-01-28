@@ -54,17 +54,19 @@ void Phonebook::add_user(void)
 void Phonebook::search()
 {
 	std::string input;
+	bool is_empty_list;
 
-    if (!this->_contacts[0].get_fname().empty())
+	is_empty_list = this->_contacts[0].get_fname().empty(); 
+    if (!is_empty_list)
 	{
-		std::cout << "|-------------------------------------------|" << std::endl;
-		std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
-		std::cout << "|----------|----------|----------|----------|" << std::endl;
+		std::cout << "|---------------------------------------------|" << std::endl;
+		std::cout << "|   Index  |First Name| Last Name | Nickname  |" << std::endl;
+		std::cout << "|----------|----------|-----------|-----------|" << std::endl;
 		for (int j = 0; j < 8; j++)
-			this->_contacts[j].get_info();
-		std::cout << "|-------------------------------------------|" << std::endl;
+			this->_contacts[j].get_info(j);
+		std::cout << "|---------------------------------------------|" << std::endl;
 	}
-	if (std::getline(std::cin, input) && input != "" && (input.length() == 1 && (input[0] >= '0' && input[0] <= '8')))
+	if (!is_empty_list && std::getline(std::cin, input) && input != "" && (input.length() == 1 && (input[0] >= '0' && input[0] <= '8')))
     {
 		if (input[0] - '0' < 8)
 			this->_contacts[input[0] - '0'].get_all_info();
