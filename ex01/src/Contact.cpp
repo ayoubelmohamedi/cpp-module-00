@@ -12,21 +12,27 @@ Contact::~Contact(void)
 	return;
 }
 
-void Contact::get_info(void)
+void Contact::get_info(int index)
 {
     bool is_big;
+    int spaces;
 
+    spaces = 5;
     if (!this->get_fname().empty())
     {
+        std::cout << "|" << std::string(spaces, ' ') << index << std::string(spaces - 1, ' ')  << "|";
         for (int i = 0; i < 3; i++)
         {
-            std::cout << "|  " << i << "  ";
             is_big = this->_info[i].length() > 10;
             if (is_big)
-                std::cout << "|  " << this->_info[i].substr(0,9) << ". | " << std::endl;
+                std::cout << this->_info[i].substr(0,9) << ".";
             else
-                std::cout << "|  " << this->_info[i] << " | "; 
-        }    
+            {
+                spaces = (10 - this->_info[i].length()) / 2; 
+                std::cout << "|" << std::string(spaces, ' ') << this->_info[i] << std::string(spaces, ' ');
+            }
+        }
+        std::cout << "|" << std::endl;
     }
 }
 
