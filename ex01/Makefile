@@ -1,7 +1,9 @@
 
+OBJ_DIR = objs
+SRC_DIR = src
+SRCS = src/Phonebook.cpp src/Contact.cpp src/main.cpp
+OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(OBJ_DIR)/%.o)
 
-SRC = src/Phonebook.cpp src/Contact.cpp src/main.cpp
-OBJ = $(SRC:dest/.cpp=.o)
 CC = g++
 RM = rm -f
 CPPFLAGS = -Wall -Wextra -Werror -Iincludes  #-std=c++97 -pedantic
@@ -10,11 +12,14 @@ NAME = phonny
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
-	$(CC) $(CPPFLAGS) $(OBJ) -o $(NAME)
+$(NAME): $(OBJS)
+	$(CC) $(CPPFLAGS) $(OBJS) -o $(NAME)
+
+$(OBJ_DIR)/%.o: $(SRC_DIR)/%.c | $(OBJ_DIR) 
+	$(CC) $(CPPFLAGS) -c $< -o $@
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
