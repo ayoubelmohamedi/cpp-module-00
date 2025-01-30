@@ -25,17 +25,13 @@ void Contact::get_info(int index)
         {
             is_big = this->_info[i].length() > 10;
             if (is_big)
-                std::cout << this->_info[i].substr(0,9) << ".";
+                std::cout << std::right << std::setw(10) << this->_info[i].substr(0,9) << ".";
             else
-            {
-                spaces = (10 - this->_info[i].length()) / 2; 
-                std::cout << "|" << std::string(spaces, ' ') << this->_info[i] << std::string(spaces, ' ');
-            }
+                std::cout << "|" << std::right << std::setw(10) << this->_info[i];
         }
         std::cout << "|" << std::endl;
     }
 }
-
 
 void Contact::get_all_info(void)
 {
