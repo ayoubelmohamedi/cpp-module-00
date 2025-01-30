@@ -64,7 +64,6 @@ void Phonebook::search()
 		std::cout << "|----------|----------|-----------|-----------|" << std::endl;
 		for (int j = 0; j < 8; j++)
 			this->_contacts[j].get_info(j);
-		std::cout << "|---------------------------------------------|" << std::endl;
 	}
 	if (!is_empty_list && std::getline(std::cin, input) && input != "" && (input.length() == 1 && (input[0] >= '0' && input[0] <= '8')))
     {

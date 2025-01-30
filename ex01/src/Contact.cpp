@@ -28,6 +28,7 @@ void Contact::get_info(int index)
                 std::cout << std::right << std::setw(10) << this->_info[i].substr(0,9) << ".";
             else
                 std::cout << "|" << std::right << std::setw(10) << this->_info[i];
+            std::cout << "---------------------------------------------" << std::endl;
         }
         std::cout << "|" << std::endl;
     }
