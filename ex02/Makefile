@@ -5,9 +5,9 @@ OBJS = $(SRCS:%.cpp=$(OBJ_DIR)/%.o)
 
 CC = g++
 RM = rm -rf
-CPPFLAGS = -Wall -Wextra -Werror -Iincludes  #-std=c++97 -pedantic
+CPPFLAGS = -Wall -Wextra -Werror -Iincludes -std=c++98 -pedantic
 
-NAME = phonny
+NAME = test
 
 all: $(NAME)
 
