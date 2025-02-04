@@ -71,11 +71,13 @@ void Phonebook::search()
 	is_empty_list = this->_contacts[0].get_fname().empty(); 
     if (!is_empty_list)
 	{
-		std::cout << "|---------------------------------------------|" << std::endl;
-		std::cout << "|   Index  |First Name| Last Name | Nickname  |" << std::endl;
-		std::cout << "|----------|----------|-----------|-----------|" << std::endl;
+		std::cout << "|-------------------------------------------|" << std::endl;
+		std::cout << "|   Index  |First Name| Last Name| Nickname |" << std::endl;
+		std::cout << "|----------|----------|----------|----------|" << std::endl;
 		for (int j = 0; j < 8; j++)
 			this->_contacts[j].get_info(j);
+		std::cout << std::endl << "---------------------------------------------" << std::endl;
+		
 	}
 	if (!is_empty_list && std::getline(std::cin, input) && input != "" && (input.length() == 1 && (input[0] >= '0' && input[0] <= '8')))
     {

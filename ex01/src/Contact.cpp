@@ -32,17 +32,17 @@ void Contact::get_info(int index)
     spaces = 5;
     if (!this->get_fname().empty())
     {
+        if (index > 0)
+            std::cout << std::endl;
         std::cout << "|" << std::string(spaces, ' ') << index << std::string(spaces - 1, ' ')  << "|";
         for (int i = 0; i < 3; i++)
         {
             is_big = this->_info[i].length() > 10;
             if (is_big)
-                std::cout << std::right << std::setw(10) << this->_info[i].substr(0,9) << ".";
+                std::cout << std::right << std::setw(9) << this->_info[i].substr(0,9) << "." << "|";
             else
-                std::cout << "|" << std::right << std::setw(10) << this->_info[i];
-            std::cout << "---------------------------------------------" << std::endl;
+                std::cout << std::right << std::setw(10) << this->_info[i] << "|";
         }
-        std::cout << "|" << std::endl;
     }
 }
 
